@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: excelmailer
-    env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
-    startCommand: gunicorn TeacherProj.wsgi:application
-    runtime: python
-    pythonVersion: 3.11.9
