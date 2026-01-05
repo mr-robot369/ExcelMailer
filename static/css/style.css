@@ -1,0 +1,909 @@
+:root {
+    --bg-midnight: #0b0f1a;
+    --bg-card: #161b2c;
+    --accent-indigo: #6366f1;
+    --accent-purple: #8b5cf6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --nav-glass: rgba(11, 15, 26, 0.8);
+}
+
+body.dark-theme {
+    background-color: var(--bg-midnight);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+/* --- Perfect Navbar --- */
+.custom-navbar {
+    background: var(--nav-glass) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 0;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+    color: white;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.nav-link:hover {
+    color: var(--accent-indigo) !important;
+    transform: translateY(-1px);
+}
+
+/* --- Buttons --- */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(99, 102, 241, 0.4);
+    color: white;
+}
+
+.btn-logout {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    font-weight: 600;
+}
+
+.btn-logout:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* --- Layout --- */
+.content-wrapper {
+    margin-top: 100px; /* Space for fixed navbar */
+    min-height: 85vh;
+}
+
+/* --- Footer --- */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #080b14;
+}
+
+.footer-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* home */
+/* Hero Wrap */
+.hero-wrap {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 80px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Status Pill */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #a5b4fc;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px #4ade80;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+/* Glass Cards */
+.glass-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 24px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-10px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.active-border {
+    border-color: var(--accent-indigo);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+}
+
+.card-icon.blue { background: rgba(59, 130, 246, 0.1); color: #60a5fa; }
+.card-icon.purple { background: rgba(168, 85, 247, 0.1); color: #c084fc; }
+.card-icon.green { background: rgba(34, 197, 94, 0.1); color: #4ade80; }
+
+/* Workflow Section */
+.workflow-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.workflow-item .num {
+    background: var(--accent-indigo);
+    color: white;
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 20px;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+/* UI Mockup Helper */
+.workflow-ui-box {
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.ui-dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.ui-content-line {
+    height: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    filter: blur(40px);
+}
+
+.floating-icon {
+    width: 120px;
+    z-index: 2;
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.5));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.text-muted{
+    color : rgba(255, 255, 255, 0.618) !important;
+}
+
+/* login page */
+/* Login Specific Styles */
+.login-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+    z-index: -1;
+    transform: translate(-20%, -20%);
+    filter: blur(50px);
+}
+
+.login-icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--accent-indigo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Custom Input Styling */
+.input-group-custom {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--text-muted);
+    z-index: 5;
+}
+
+.form-control-custom {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 12px 12px 45px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--accent-indigo);
+    outline: none;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
+}
+
+/* Custom Alert */
+.custom-alert {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+
+/* dashboard page */
+/* Metric Cards */
+.metric-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, var(--bg-card), rgba(30, 41, 59, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metric-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.icon-blue { background: rgba(99, 102, 241, 0.1); color: #6366f1; }
+.icon-green { background: rgba(34, 197, 94, 0.1); color: #4ade80; }
+
+.progress-bar-bg {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill { height: 100%; border-radius: 10px; }
+.progress-fill.blue { background: #6366f1; }
+.progress-fill.green { background: #22c55e; }
+
+/* Action Tiles */
+.action-tile-link { text-decoration: none; color: inherit; display: block; height: 100%; }
+
+.action-tile {
+    padding: 40px 25px;
+    border-radius: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.action-tile:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.action-tile.highlight {
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+.tile-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.bg-soft-primary { background: rgba(99, 102, 241, 0.1); }
+.bg-soft-success { background: rgba(34, 197, 94, 0.1); }
+.bg-soft-danger { background: rgba(239, 68, 68, 0.1); }
+
+.tile-arrow {
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--accent-indigo);
+}
+
+.action-tile:hover .tile-arrow { opacity: 1; transform: translateX(5px); }
+.action-tile:hover .tile-icon { transform: scale(1.1); }
+
+.ls-1 { letter-spacing: 1px; }
+
+
+/* member_list page */
+/* Table Reset for Dark Theme */
+.glass-card-table {
+    background: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.table-dark-custom {
+    background-color: transparent !important;
+    color: var(--text-main) !important;
+}
+
+.table-dark-custom thead th {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: var(--text-muted) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 1.25rem 1rem !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.table-dark-custom tbody td {
+    background: transparent !important;
+    color: var(--text-main) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 1rem !important;
+    vertical-align: middle;
+}
+
+.table-dark-custom tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Updated Sheet Badge */
+.sheet-badge {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Status Dot Fix */
+.status-indicator {
+    color: #4ade80;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.status-indicator .dot {
+    height: 8px;
+    width: 8px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* add members page */
+/* Glass Outline Button */
+.btn-outline-glass {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Form Helper Text */
+.form-text.text-muted {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Ensure glass-card works for forms */
+.glass-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+/* excel upload page */
+/* Upload Area Design */
+.upload-area {
+    border: 2px dashed rgba(99, 102, 241, 0.3);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.upload-area:hover {
+    border-color: var(--accent-indigo);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.file-input-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-icon-wrap {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+}
+
+/* File History List */
+.file-history-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.file-history-item:hover {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.file-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.smaller { font-size: 0.75rem; }
+.fw-500 { font-weight: 500; }
+
+.file-list-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom Scrollbar for the list */
+.file-list-scroll::-webkit-scrollbar { width: 5px; }
+.file-list-scroll::-webkit-scrollbar-track { background: transparent; }
+.file-list-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+
+/*! excel send page */
+/* ============================================================
+   DISTRIBUTION & INSPECTOR PAGE (excel_send.html)
+   ============================================================ */
+
+/* 1. LAYOUT & SCROLLING */
+.preview-scroll-area {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+/* Custom Scrollbar for the Sheet Inspector */
+.preview-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+.preview-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+.preview-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.preview-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-indigo);
+}
+
+/* 2. FORMAT SELECTION TILES (Fixes Selection Issues) */
+.format-check {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.format-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+}
+
+.format-tile:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Triggered when the hidden radio is checked */
+.format-check:checked + .format-tile {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--accent-indigo);
+    color: white;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+}
+
+.format-check:checked + .format-tile i {
+    color: var(--accent-indigo);
+    transform: scale(1.2);
+}
+
+/* 3. FILE & SHEET ICONS */
+.file-stack-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--accent-indigo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.sheet-thumb {
+    width: 30px;
+    height: 30px;
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+/* 4. SHEET PREVIEW CARDS */
+.sheet-preview-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sheet-preview-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sheet-name-text {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.btn-preview-sm {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-preview-sm:hover {
+    background: var(--accent-indigo);
+    color: white;
+    border-color: var(--accent-indigo);
+}
+
+/* 5. DARK SELECT DROPDOWN FIX */
+select.form-control-custom {
+    color-scheme: dark; /* Forces browser internal UI to dark mode */
+}
+
+select.form-control-custom option {
+    background-color: #161b2c !important; /* Matches --bg-card */
+    color: white !important;
+}
+
+/* 6. UTILITIES */
+.smaller {
+    font-size: 0.7rem;
+    display: block;
+}
+
+.badge.bg-secondary {
+    background-color: rgba(148, 163, 184, 0.1) !important;
+    color: #94a3b8;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+/* Custom Dark Alerts */
+.custom-alert {
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.alert-success-dark {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+    color: #34d399 !important;
+}
+
+.alert-danger-dark {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    color: #f87171 !important;
+}
+
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    font-size: 0.75rem;
+    padding: 1.5rem;
+}
+
+/* Excel file Preview */
+/* Preview Grid Specifics */
+.preview-grid-container {
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.table-grid {
+    border-collapse: collapse !important;
+}
+
+.table-grid tbody td {
+    padding: 10px 15px !important;
+    font-family: 'Inter', 'Segoe UI', monospace; /* Monospace-leaning for data */
+    font-size: 0.85rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.03) !important;
+    white-space: nowrap; /* Keeps the spreadsheet look */
+}
+
+/* Row numbering column */
+.row-index {
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    text-align: center;
+    width: 40px;
+    user-select: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.cell-content {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Scrollbar refinement for the grid */
+.preview-grid-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.preview-grid-container::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.2);
+    border-radius: 4px;
+}
+.preview-grid-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-indigo);
+}
+
+.bg-dark-subtle {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.smaller {
+    font-size: 0.75rem;
+}
+
+
+/* Email Log page */
+/* ============================================================
+   EMAIL LOGS PAGE (email_logs.html)
+   ============================================================ */
+
+/* 1. HEADER ACTIONS */
+.btn-outline-success-custom {
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 101, 0.3);
+    background: rgba(34, 197, 94, 0.05);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success-custom:hover {
+    background: #22c55e;
+    color: white;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-outline-glass {
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+.btn-outline-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 2. LOG ROW STYLING */
+.log-icon {
+    width: 38px; /* Increased size from 32px for better presence */
+    height: 38px;
+    background: rgba(99, 102, 241, 0.1); /* Indigo tint */
+    color: var(--accent-indigo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+/* Hover effect for the icon when row is hovered */
+.table-dark-custom tbody tr:hover .log-icon {
+    background: var(--accent-indigo);
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+/* 3. STATUS INDICATORS */
+.status-indicator.error {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
+.status-indicator.error .dot {
+    background-color: #f87171;
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
+}
+
+/* 4. TABLE REFINEMENTS */
+.table-dark-custom tbody tr td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    vertical-align: middle;
+}
+
+/* 5. TOOLTIPS & TYPOGRAPHY */
+[title] {
+    cursor: help;
+    text-decoration: underline dotted rgba(255, 255, 255, 0.2);
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.ls-1 { 
+    letter-spacing: 1px; 
+}
+
+.smaller {
+    font-size: 0.75rem;
+}

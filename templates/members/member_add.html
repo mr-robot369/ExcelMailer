@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Add Member | ExcelMailer{% endblock %}
+
+{% block content %}
+<div class="container pb-5">
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8 col-lg-6">
+            <div class="d-flex justify-content-between align-items-end">
+                <div>
+                    <h1 class="fw-800 display-6 mb-1 text-white">Add <span class="text-gradient">Member</span></h1>
+                    <p class="text-muted mb-0">Create a new distribution mapping.</p>
+                </div>
+                <a href="{% url 'member_list' %}" class="btn btn-outline-glass rounded-pill btn-sm px-3">
+                    <i class="fa-solid fa-arrow-left me-1"></i> Back
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert custom-alert mb-4">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="glass-card p-4 p-md-5">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-4">
+                        <label class="form-label small text-uppercase fw-bold opacity-75">Full Name</label>
+                        <div class="input-group-custom">
+                            <span class="input-icon"><i class="fa-solid fa-user-tag"></i></span>
+                            <input type="text" name="name" class="form-control-custom" placeholder="e.g. John Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small text-uppercase fw-bold opacity-75">Email Address</label>
+                        <div class="input-group-custom">
+                            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <input type="email" name="email" class="form-control-custom" placeholder="john@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small text-uppercase fw-bold opacity-75">Excel Sheet Name</label>
+                        <div class="input-group-custom">
+                            <span class="input-icon"><i class="fa-solid fa-file-invoice"></i></span>
+                            <input type="text" name="sheet_name" class="form-control-custom" placeholder="e.g. Sales_Data" required>
+                        </div>
+                        <div class="form-text text-muted mt-2 small">
+                            <i class="fa-solid fa-circle-info me-1"></i> 
+                            Must <strong>exactly</strong> match the tab name in your Excel file.
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-5">
+                        <button type="submit" class="btn btn-primary-custom flex-grow-1 py-3 rounded-pill">
+                            <i class="fa-solid fa-user-plus me-2"></i> Save Member
+                        </button>
+                        <a href="{% url 'member_list' %}" class="btn btn-logout px-4 py-3 rounded-pill">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

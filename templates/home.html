@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero-wrap">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <div class="status-pill mb-3">
+                    <span class="pulse"></span> Now supporting Automated PDF Slicing
+                </div>
+                <h1 class="display-3 fw-bold lh-sm mb-4">
+                    Master your Data <br>
+                    <span class="text-gradient">Distribute with Ease</span>
+                </h1>
+                <p class="lead text-muted mb-5 pe-lg-5">
+                    ExcelMailer intelligently splits your master spreadsheets and securely delivers individual sheets to your team—automatically.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'login' %}" class="btn btn-primary-custom btn-lg rounded-pill px-5">
+                        Launch Dashboard
+                    </a>
+                    <a href="#features" class="btn btn-outline-glass btn-lg rounded-pill px-5">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-visual">
+                    <div class="glow-orb"></div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968250.png" alt="Excel" class="floating-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5" id="features">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold h1">Why Choose ExcelMailer?</h2>
+            <p class="text-muted">Precision tools built for institutional security.</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="glass-card">
+                    <div class="card-icon blue"><i class="fa-solid fa-arrows-split-up"></i></div>
+                    <h4>Auto-Slicing</h4>
+                    <p class="text-muted mb-0">The system automatically detects sheets and maps them to the correct recipient without manual intervention.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card active-border">
+                    <div class="card-icon purple"><i class="fa-solid fa-file-pdf"></i></div>
+                    <h4>PDF Transformation</h4>
+                    <p class="text-muted mb-0">Convert raw Excel rows into clean, professional PDF reports with custom headers for every member.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card">
+                    <div class="card-icon green"><i class="fa-solid fa-user-shield"></i></div>
+                    <h4>Zero-Leakage</h4>
+                    <p class="text-muted mb-0">Members only ever see their own data. Department heads are isolated to ensure privacy across the board.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-darker" id="workflow">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                <h2 class="fw-bold display-5 mb-4">Streamline your <span class="text-gradient">Workflow</span></h2>
+                <div class="workflow-item">
+                    <div class="num">1</div>
+                    <p><strong>Admin adds Department Heads.</strong> Credentials are sent securely via internal protocols.</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="num">2</div>
+                    <p><strong>Heads map members.</strong> Upload once, and the system remembers who gets what sheet.</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="num">3</div>
+                    <p><strong>One-Click Send.</strong> Our bulk-mailer handles attachments and encryption in the background.</p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="workflow-ui-box">
+                    <div class="ui-dots"><span></span><span></span><span></span></div>
+                    <div class="ui-content-line w-75"></div>
+                    <div class="ui-content-line w-50"></div>
+                    <div class="ui-content-line w-100 mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
