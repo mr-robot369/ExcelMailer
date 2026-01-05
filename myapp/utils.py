@@ -64,7 +64,8 @@ def process_pdf_and_send_emails(admin_instance, request, queryset):
                     email = EmailMessage(
                         subject="Your PDF File",
                         body="Please find attached PDF.",
-                        from_email=os.environ.get("EMAIL_FROM"),
+                        # from_email=os.environ.get("EMAIL_FROM"),
+                        from_email=None,
                         to=[member.email],
                     )
                     email.attach(f"{sheet_name}.pdf", pdf_content, "application/pdf")
@@ -125,7 +126,8 @@ def process_sheet_and_send_emails(admin_instance, request, queryset):
                     email = EmailMessage(
                         subject="Your Excel Sheet",
                         body="Please find attached Excel file.",
-                        from_email=os.environ.get("EMAIL_FROM"),
+                        # from_email=os.environ.get("EMAIL_FROM"),
+                        from_email=None,
                         to=[member.email],
                     )
                     email.attach(

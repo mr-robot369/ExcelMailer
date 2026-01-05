@@ -25,8 +25,10 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "UPDATE-ME-DURING-RUNTIME")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get("DJANGO_DEBUG", "") == "True"
 DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1","http://localhost:8000/"]
+# ALLOWED_HOSTS = ["127.0.0.1","http://localhost:8000/"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,17 +86,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": os.getenv("DB"),
-#         "USER": os.getenv("DB_USER"),
-#         "PASSWORD": os.getenv("DB_PWD"),
-#         "HOST": os.getenv("DB_HOST"),
-#         "PORT": os.getenv("DB_PORT"),
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -123,16 +115,23 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+# Timezone settings
+TIME_ZONE = "Asia/Kolkata"
+
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR/'public'/'static'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR/'public'/'media'
+# STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR/'public'/'static'
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR/'public'/'media'
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -143,13 +142,16 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER= os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD= os.environ.get('EMAIL_PASS')
-EMAIL_USE_TLS=True
+# ! Use below only if you have credentials
+# EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_PORT=587
+# EMAIL_HOST_USER= os.environ.get('EMAIL_USER')
+# EMAIL_HOST_PASSWORD= os.environ.get('EMAIL_PASS')
+# EMAIL_USE_TLS=True
 
+# ! For demo
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'home'
