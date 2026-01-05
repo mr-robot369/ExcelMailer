@@ -9,7 +9,7 @@
 
 ## 🌐 Live Demo
 
-🔗 **Website:** https://excelmailer-2.onrender.com/excel/send/  
+🔗 **Website:** https://excelmailer-2.onrender.com/  
 🔗 **GitHub Repository:** https://github.com/mr-robot369/ExcelMailer.git  
 
 ---
